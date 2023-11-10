@@ -4,17 +4,15 @@ public class Rorator : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
-    private Transform _transform;
-    private Vector3 _vector;
+    private Transform _transform;    
 
     private void Awake()
     {
-        _transform = GetComponent<Transform>();
-        _vector = new Vector3(0, _speed, 0) * Time.deltaTime;
+        _transform = GetComponent<Transform>();        
     }
 
     private void Update()
     {
-        _transform.Rotate(_vector);
+        _transform.Rotate(new Vector3(0, _speed * Time.deltaTime, 0));
     }
 }

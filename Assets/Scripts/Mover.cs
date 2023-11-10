@@ -4,17 +4,15 @@ public class Mover : MonoBehaviour
 {  
 	[SerializeField] private float _speed;
 
-    private Transform _transform;
-    private Vector3 _vector;
+    private Transform _transform;    
 
     private void Awake()
 	{
-		_transform = GetComponent<Transform>();
-        _vector = new Vector3(_speed * Time.deltaTime, 0, 0);
+		_transform = GetComponent<Transform>();        
     }
 
 	private void Update()
 	{
-        transform.position = transform.position + _vector;
+        _transform.Translate(Vector3.forward * _speed * Time.deltaTime);
     }
 }
